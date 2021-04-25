@@ -23,4 +23,9 @@
 
        # Runs a set of commands using the runners shell
        - name: Swift test
-         run: for d in ./*/ ; do (cd "$d" && swift test && cd ..); done
+         run: for d in ./*/ ; do (cd "$d" && swift test --enable-code-coverage && cd ..); done
+
+       - name: Test coverage
+         uses: maxep/spm-lcov-action@0.3.0
+         with:
+             output-file: ./coverage/lcov.info
