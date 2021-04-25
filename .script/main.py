@@ -5,14 +5,14 @@ import subprocess
 def out(command):
     result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
     return result.stdout
-initPath = ".."
+
 #b = subprocess.check_output("cd {} ;ls".format(initPath), shell=True)
-b = out("cd {}/ ;ls".format(initPath))
+b = out("ls".format(initPath))
 c = str(b).split('\n')
 c.remove('')
 reportList = []
 for folder in c:
-    x = subprocess.check_output("cd {}/{} && swift test".format(initPath,folder), shell=True, stderr=subprocess.STDOUT)
+    x = subprocess.check_output("cd {} && swift test".format(folder), shell=True, stderr=subprocess.STDOUT)
     output = x.decode("utf-8")
     translator = str.maketrans({chr(9): ''})
     output = output.translate(translator)
