@@ -5,7 +5,7 @@ import subprocess
 def out(command):
     result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
     return result.stdout
-initPath = "~"
+initPath = ".."
 #b = subprocess.check_output("cd {} ;ls".format(initPath), shell=True)
 b = out("cd {}/ ;ls".format(initPath))
 c = str(b).split('\n')
