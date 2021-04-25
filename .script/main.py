@@ -7,7 +7,7 @@ def out(command):
     return result.stdout
 
 #b = subprocess.check_output("cd {} ;ls".format(initPath), shell=True)
-b = out("ls".format(initPath))
+b = out("ls")
 c = str(b).split('\n')
 c.remove('')
 reportList = []
