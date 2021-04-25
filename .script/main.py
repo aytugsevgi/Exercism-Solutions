@@ -46,4 +46,3 @@ if totalFail>0:
     print("\tPackages that fail the test!")
     print("\t{}\n".format(onErrorList))
 print("Test Successful Rate: {:.2f}%".format(average))
-
