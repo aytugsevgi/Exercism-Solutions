@@ -1,5 +1,3 @@
-//Solution goes in Sources
-
 struct SumOfMultiples {
     static func toLimit(_ upperLimit: Int, inMultiples: [Int]) -> Int {
         var myInMultiples = inMultiples
