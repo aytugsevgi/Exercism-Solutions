@@ -16,3 +16,6 @@ class Hamming {
     }
 }
 
+/*
+ test
+ */
