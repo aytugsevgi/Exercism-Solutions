@@ -3,6 +3,12 @@ import os
 import subprocess
 import sys, getopt
 
+class bcolors:
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
 def out(command):
     result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
     return result.stdout
@@ -63,7 +69,7 @@ def runTests(path):
     if totalFail>0:
         print("\t-Packages that fail the test!")
         print("\t{}\n".format(testFaileds))
-    print("Test Successful Rate: {:.2f}%".format(average))
+    print(f"{bcolors.OKGREEN}Test Successful Rate: {:.2f}%{bcolors.ENDC}".format(average))
 
 
 arg = ""
