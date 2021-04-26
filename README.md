@@ -1,7 +1,12 @@
 # Exercism-Solutions with Swift Test Automation
  
 This script automating your swift unit tests. 
-Script handle the terminal outputs, it shows you compiling errors, failed tests, which packages encountered errors and average test success results.
+Script handle the terminal outputs, it shows
+
+- Compiling errors, 
+- Failed tests, 
+- Which packages encountered errors
+- Average test success results.
 
 ## Applying a script on any new push:
 
