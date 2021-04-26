@@ -1,7 +1,7 @@
 # Exercism-Solutions with Swift Test Automation
  
 This script automating your swift unit tests. 
-Script handle the terminal outputs, it shows
+Script handle the terminal outputs, it shows;
 
 - Compiling errors
 - Failed tests
