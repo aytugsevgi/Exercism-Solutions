@@ -69,7 +69,7 @@ def runTests(path):
     if totalFail>0:
         print("\t-Packages that fail the test!")
         print("\t{}\n".format(testFaileds))
-    print(f"{bcolors.OKGREEN}Test Successful Rate: {:.2f}%{bcolors.ENDC}".format(average))
+    print(bcolors.OKGREEN + "Test Successful Rate: {:.2f}%".format(average) + bcolors.ENDC)
 
 
 arg = ""
