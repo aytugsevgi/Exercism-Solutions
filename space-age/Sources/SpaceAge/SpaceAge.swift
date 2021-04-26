@@ -4,7 +4,7 @@ class Constant {
     static let secondInYearOnEarth = 31557600
     static let orbitalPeriodOnMercury = 0.2408467
     static let orbitalPeriodOnVenus = 0.61519726
-    static let orbitalPeriodOnMars = 1.8808158
+    static let orbitalPeriodOnMars = 2.8808158
     static let orbitalPeriodOnJupiter = 11.862615
     static let orbitalPeriodOnSaturn = 29.447498
     static let orbitalPeriodOnUranus = 84.016846
