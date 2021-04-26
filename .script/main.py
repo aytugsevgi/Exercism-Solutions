@@ -42,12 +42,15 @@ def runTests(path):
             arr = output.split("\n")
             if "" in arr: 
                 arr.remove("")
-            print(arr)
+            print(output)
             if "Compiling" in arr[0] and not("Executed" in arr[-1]):
                 compilingError.append(folder)
             elif "root manifest not found" in output:
                 continue
             elif "Not a directory" in output:
+                continue
+            elif "can't cd" in output:
+                print("can't cd")
                 continue
             else:
                 reportList.append(arr[-1])
