@@ -22,8 +22,5 @@
        - uses: actions/checkout@v2
        - name: Run Script
          run: python3 .script/main.py
-       # Runs a set of commands using the runners shell
-       - name: Swift Test
-         run: for d in ./*/ ; do (cd "$d" && swift test && cd ..); done
 
 
