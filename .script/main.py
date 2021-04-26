@@ -42,6 +42,7 @@ def runTests(path):
             arr = output.split("\n")
             if "" in arr: 
                 arr.remove("")
+            print(arr)
             if "Compiling" in arr[0] and not("Executed" in arr[-1]):
                 compilingError.append(folder)
             elif "root manifest not found" in output:
