@@ -20,7 +20,6 @@ def runTests(path):
     if path != "":
         pathCommand = "cd {} &&".format(path) 
     b = out("{} ls".format(pathCommand))
-    print(pathCommand)
     folderList = str(b).split('\n')
     folderList.remove('')
     reportList = []
@@ -41,10 +40,8 @@ def runTests(path):
             translator = str.maketrans({chr(9): ''})
             output = output.translate(translator)
             arr = output.split("\n")
-            
             if "" in arr: 
                 arr.remove("")
-            print(arr[-1])
             if "Compiling" in arr[0] and not("Executed" in arr[-1]):
                 compilingError.append(folder)
             elif "root manifest not found" in output:
