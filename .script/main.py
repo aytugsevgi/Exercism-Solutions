@@ -8,6 +8,7 @@ class bcolors:
     WARNING = '\033[93m'
     FAIL = '\033[91m'
     BOLD = '\033[1m'
+    OKCYAN = '\033[96m'
     UNDERLINE = '\033[4m'
     ENDC = '\033[0m'
 def out(command):
@@ -19,6 +20,7 @@ def runTests(path):
     if path != "":
         pathCommand = "cd {} &&".format(path) 
     b = out("{} ls".format(pathCommand))
+    print(pathCommand)
     folderList = str(b).split('\n')
     folderList.remove('')
     reportList = []
@@ -62,8 +64,8 @@ def runTests(path):
     # displaying the results on terminal
     success = totalTest - totalFail
     average = ( success / totalTest ) * 100
-    print(bcolors.UNDERLINE + "Total package count: {}".format(len(folderList)) + bcolors.ENDC)
-    print(bcolors.UNDERLINE + "Total test case: {}".format(totalTest) + bcolors.ENDC)
+    print(bcolors.OKCYAN + "Total package count: {}".format(len(folderList)) + bcolors.ENDC)
+    print(bcolors.OKCYAN + "Total test case: {}".format(totalTest) + bcolors.ENDC)
     if len(compilingError)>0:
         print(bcolors.FAIL + "Total compiling error: {}".format(len(compilingError)) + bcolors.ENDC)
         print(bcolors.FAIL + "\t-Packages that fail on compile! (These packages are not included in the test rate)" + bcolors.ENDC)
