@@ -41,10 +41,11 @@ def runTests(path):
             translator = str.maketrans({chr(9): ''})
             output = output.translate(translator)
             arr = output.split("\n")
-            print(arr)
+            
             if "" in arr: 
                 arr.remove("")
-            if "Compiling" in arr[0]:
+            print(arr[-1])
+            if "Compiling" in arr[0] and "Executed" not in arr:
                 compilingError.append(folder)
             elif "root manifest not found" in output:
                 continue
