@@ -41,6 +41,7 @@ def runTests(path):
             translator = str.maketrans({chr(9): ''})
             output = output.translate(translator)
             arr = output.split("\n")
+            print(arr)
             if "" in arr: 
                 arr.remove("")
             if "Compiling" in arr[0]:
