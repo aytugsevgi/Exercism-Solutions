@@ -3,10 +3,10 @@
 This script automating your swift unit tests. 
 Script handle the terminal outputs, it shows
 
-- Compiling errors, 
-- Failed tests, 
+- Compiling errors
+- Failed tests
 - Which packages encountered errors
-- Average test success results.
+- Average test success results
 
 ## Applying a script on any new push:
 
