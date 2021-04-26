@@ -57,19 +57,26 @@ def runTests(path):
         reportInfo = report.split(" ")
         totalTest += int(reportInfo[1])
         totalFail += int(reportInfo[4])
+
+    # displaying the results on terminal
     success = totalTest - totalFail
     average = ( success / totalTest ) * 100
-    print("Total package count: {}".format(len(folderList)))
+    print(bcolors.BOLD + "Total package count: {}".format(len(folderList)) + bcolors.ENDC)
     if len(compilingError)>0:
-        print("Total compiling error: {}".format(len(compilingError)))
-        print("\t-Packages that fail on compile! (These packages are not included in the test rate)")
+        print(bcolors.FAIL + "Total compiling error: {}".format(len(compilingError)) + bcolors.ENDC)
+        print(bcolors.FAIL + "\t-Packages that fail on compile! (These packages are not included in the test rate)" + bcolors.ENDC)
         print("\t{}\n".format(compilingError))
-    print("Total test case: {}".format(totalTest))
-    print("Total failed test case: {}".format(totalFail))
+    print(bcolors.BOLD + "Total test case: {}".format(totalTest) + bcolors.ENDC)
+    print(bcolors.WARNING + "Total failed test case: {}".format(totalFail) + bcolors.ENDC)
     if totalFail>0:
-        print("\t-Packages that fail the test!")
+        print(bcolors.WARNING + "\t-Packages that fail the test!" + bcolors.ENDC)
         print("\t{}\n".format(testFaileds))
-    print(bcolors.OKGREEN + "Test Successful Rate: {:.2f}%".format(average) + bcolors.ENDC)
+    rateColor = bcolors.OKGREEN
+    if average<80.0 and average>=70.0:
+        rateColor = bcolors.WARNING
+    elif average<70.0:
+        rateColor = bcolors.FAIL
+    print(rateColor + "Test Successful Rate: {:.2f}%".format(average) + bcolors.ENDC)
 
 
 arg = ""
