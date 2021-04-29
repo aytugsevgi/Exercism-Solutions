@@ -28,7 +28,7 @@ name: CI
 
 ```
 ## If your package files are in a specific path. (No need if it's directly in your repository)
-You can specify which file it is under as parameters. Example path for "swift/mySolutions".
+You can specify which file it is under as parameters. Example path for "swift/".
 ```yml
 name: CI
  on:
@@ -43,7 +43,7 @@ name: CI
        - uses: actions/checkout@v2
        # You can run script like this
        - name: Run Script
-         run: python3 .script/main.py swift/mySolutions
+         run: python3 .script/main.py swift/
 
 ```
 
