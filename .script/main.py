@@ -25,6 +25,7 @@ def runTests(path):
     reportList = []
     testFaileds = []
     compilingError = []
+    packageCount = 0
     for folder in folderList:
         try:
             x = subprocess.check_output("{} cd {} && swift test".format(pathCommand,folder), shell=True, stderr=subprocess.STDOUT)
@@ -35,6 +36,7 @@ def runTests(path):
             if "" in arr: 
                 arr.remove("")
             reportList.append(arr[-1])
+            packageCount += 1
         except subprocess.CalledProcessError as e:
             output = e.output.decode("utf-8")
             translator = str.maketrans({chr(9): ''})
@@ -44,6 +46,7 @@ def runTests(path):
                 arr.remove("")
             if "Compiling" in arr[0] and not("Executed" in arr[-1]):
                 compilingError.append(folder)
+                packageCount += 1
             elif "root manifest not found" in output:
                 continue
             elif "Not a directory" in output:
@@ -53,6 +56,7 @@ def runTests(path):
             else:
                 reportList.append(arr[-1])
                 testFaileds.append(folder)
+                packageCount += 1
 
     totalTest = 0
     totalFail = 0
@@ -65,7 +69,7 @@ def runTests(path):
     # displaying the results on terminal
     success = totalTest - totalFail
     average = ( success / totalTest ) * 100
-    print(bcolors.OKCYAN + "Total package count: {}".format(len(folderList)) + bcolors.ENDC)
+    print(bcolors.OKCYAN + "Total package count: {}".format(packageCount) + bcolors.ENDC)
     print(bcolors.OKCYAN + "Total test case: {}".format(totalTest) + bcolors.ENDC)
     if len(compilingError)>0:
         print(bcolors.FAIL + "Total compiling error: {}".format(len(compilingError)) + bcolors.ENDC)
