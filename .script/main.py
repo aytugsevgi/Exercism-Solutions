@@ -55,7 +55,7 @@ def runTests(path):
             elif "can't cd" in output:
                 continue
             else:
-                reportList.append(arr[-1])
+                reportList.append(arr[-2])
                 testFaileds.append(folder)
                 packageCount += 1
 
