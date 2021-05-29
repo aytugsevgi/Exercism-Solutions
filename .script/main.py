@@ -60,6 +60,7 @@ def runTests(path):
 
     totalTest = 0
     totalFail = 0
+    print(reportList)
     for report in reportList:
         report = report.strip()
         reportInfo = report.split(" ")
