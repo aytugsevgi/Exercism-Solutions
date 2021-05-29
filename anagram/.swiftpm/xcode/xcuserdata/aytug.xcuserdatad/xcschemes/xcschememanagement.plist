@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Proverb.xcscheme_^#shared#^_</key>
+		<key>Anagram.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>Proverb</key>
+		<key>Anagram</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ProverbTests</key>
+		<key>AnagramTests</key>
 		<dict>
 			<key>primary</key>
 			<true/>
