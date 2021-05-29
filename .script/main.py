@@ -35,7 +35,6 @@ def runTests(path):
             arr = output.split("\n")
             if "" in arr: 
                 arr.remove("")
-            print(arr[-3:])
             reportList.append(arr[-2])
             packageCount += 1
         except subprocess.CalledProcessError as e:
@@ -61,7 +60,6 @@ def runTests(path):
 
     totalTest = 0
     totalFail = 0
-    print(reportList)
     for report in reportList:
         report = report.strip()
         reportInfo = report.split(" ")
